@@ -1,4 +1,5 @@
-[![NPM version](https://badge.fury.io/js/badge-list.svg)](http://badge.fury.io/js/badge-list)
+
+[![NPM version](https://badge.fury.io/js/angular-es6-webpack-starter.svg)](http://badge.fury.io/js/angular-es6-webpack-starter)
 [![GitHub version](https://badge.fury.io/gh/KarlDoyle%2Fangular-es6-webpack-starter.svg)](http://badge.fury.io/gh/KarlDoyle%2Fangular-es6-webpack-starter)
 [![Build Status](https://travis-ci.org/KarlDoyle/angular-es6-webpack-starter.svg?branch=master)](https://travis-ci.org/KarlDoyle/angular-es6-webpack-starter)
 [![Dependency Status](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter.svg)](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter)
@@ -11,7 +12,7 @@
 angular-es6-webpack-starter
 =============================
 
-An Angular 1 Starter kit featuring Angular 1, ES6, Webpack, UI-Router, SCSS, HMR, Multi config Webpack.
+An Angular 1 Starter kit featuring Angular 1, ES6, Webpack, UI-Router, SCSS, HMR, Protractor and multi environments.
 
 This seed repo serves as an Angular 1 starter for anyone looking to get up and running with Angular 1 and ES6 fast. Using Webpack for building our files and assisting with boilerplate. We're also using Protractor for our end-to-end tests.
 
