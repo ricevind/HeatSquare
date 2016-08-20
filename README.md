@@ -1,7 +1,7 @@
 Angular webpack es6 starter
 =============================
 
-[![Build Status](https://travis-ci.org/KarlDoyle/angular-es6-webpack-starter.svg?branch=master)](https://travis-ci.org/KarlDoyle/angular-es6-webpack-starter)
+[![CircleCI](https://circleci.com/gh/KarlDoyle/angular-es6-webpack-starter.svg?style=svg)](https://circleci.com/gh/KarlDoyle/angular-es6-webpack-starter)
 [![NPM version](https://badge.fury.io/js/badge-list.svg)](http://badge.fury.io/js/badge-list)
 [![GitHub version](https://badge.fury.io/gh/KarlDoyle%2Fangular-es6-webpack-starter.svg)](http://badge.fury.io/gh/KarlDoyle%2Fangular-es6-webpack-starter)
 
