@@ -14,7 +14,7 @@ install:
 
 before_script:
   - npm run build
-  - npm run test-server
+  - npm run test-server &
 
 script:
   - npm test
