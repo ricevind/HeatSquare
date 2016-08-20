@@ -1,7 +1,6 @@
 {
-  "name": "white-label-attendee-app",
+  "name": "angular-es6-webpack-starter",
   "version": "0.0.1",
-  "private": true,
   "dependencies": {
     "angular": "^1.5.3",
     "angular-ui-router": "1.0.0-beta.1"
