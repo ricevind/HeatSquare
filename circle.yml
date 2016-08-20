@@ -15,5 +15,5 @@ test:
   pre:
     - npm run build:
         timeout: 240
-    - npm run httpserver:
+    - npm run circleci-server:
         background: true
