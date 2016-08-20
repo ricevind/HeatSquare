@@ -1,0 +1,12 @@
+language: node_js
+
+dependencies:
+  override:
+    - npm install:
+        timeout: 240
+
+before_script:
+  - npm run build:
+      timeout: 240
+  - npm run test-server:
+      background: true

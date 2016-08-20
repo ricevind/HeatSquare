@@ -11,7 +11,7 @@
   "scripts": {
     "pretest": "webdriver-manager update",
     "test": "protractor ./test/protractor.conf.js",
-    "circleci-server": "http-server dist -p 9000 -a localhost",
+    "test-server": "http-server dist -p 9000 -a localhost",
     "start": "webpack-dev-server --config webpack.config.dev.babel.js  --port 9000 --inline --hot --open",
     "build": "webpack --config webpack.config.prod.babel.js --progress"
   },
