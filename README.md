@@ -4,6 +4,8 @@
 [![Dependency Status](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter.svg)](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter)
 [![devDependency Status](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter/dev-status.svg)](https://david-dm.org/KarlDoyle/angular-es6-webpack-starter#info=devDependencies)
 
+[![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/KarlDoyle/angular-1-starter-kit)
+
 ![Angular, ES6 and Webpack Starter](http://i.imgur.com/U6ueigg.jpg)
 
 angular-es6-webpack-starter
