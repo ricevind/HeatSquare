@@ -13,8 +13,8 @@ exports.config = {
 
   // url where your app is running, relative URLs are prepending with this URL
   baseUrl: 'http://localhost:9000/#/',
-  chromeOnly:true,
-  directConnect: true,
+  // chromeOnly:true,
+  // directConnect: true,
 
   jasmineNodeOpts: {
     showColors: true,
