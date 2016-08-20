@@ -1,8 +1,14 @@
 {
   "name": "angular-es6-webpack-starter",
   "description": "An Angular 1 Starter kit featuring Angular 1, ES6, Webpack, UI-Router, SCSS, HMR, Protractor and multi environments.",
-  "version": "0.1.3",
-  "keywords": ["angular", "webpack", "es6", "starter", "generator"],
+  "version": "0.1.4",
+  "keywords": [
+    "angular",
+    "webpack",
+    "es6",
+    "starter",
+    "generator"
+  ],
   "engines": {
     "node": "6.3.1"
   },
