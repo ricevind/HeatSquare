@@ -39,7 +39,7 @@
     "ng-annotate-loader": "0.1.1",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "ng-cache-loader": "0.0.18",
-    "node-sass": "^3.7.0",
+    "node-sass": "^4.1.1",
     "protractor": "^4.0.3",
     "require-dir": "^0.3.0",
     "sass-loader": "^4.0.0",
