@@ -7,13 +7,13 @@ exports.config = {
 
   capabilities: {
 
-    'browserName': 'firefox',
+    'browserName': 'chrome',
     'shardTestFiles': true
     // 'maxInstances': 3
   },
 
   // url where your app is running, relative URLs are prepending with this URL
-  baseUrl: 'http://localhost:9000/#/',
+  baseUrl: 'http://localhost:9000/#!/',
   // chromeOnly:true,
   // directConnect: true,
 
