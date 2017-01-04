@@ -2,7 +2,6 @@ import webpack from 'webpack';
 import WebpackConfig from 'webpack-config';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 module.exports = new WebpackConfig().merge({
@@ -21,7 +20,7 @@ module.exports = new WebpackConfig().merge({
     ],
     loaders: [{
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style", "css!sass")
+        loader: 'style!css?sourceMap!sass?sourceMap&sourceComments'
     }, {
         test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
         loader: 'url-loader?limit=300'
@@ -38,7 +37,6 @@ module.exports = new WebpackConfig().merge({
     }]
   },
   plugins: [
-    new ExtractTextPlugin("bundle.css"),
     new CleanWebpackPlugin(['dist'], {
       root: __dirname,
       verbose: true,
