@@ -1,0 +1,38 @@
+{
+  "name": "Angular ES6 and Webpack Starter",
+  "short_name": "ng Start Kit",
+  "icons": [{
+          "src": "app/images/icon-128.jpg",
+          "type": "image/jpg",
+          "sizes": "128x128"
+        }, {
+          "src": "app/images/icon-152.jpg",
+          "type": "image/jpg",
+          "sizes": "152x152"
+        }, {
+          "src": "app/images/icon-144.jpg",
+          "type": "image/jpg",
+          "sizes": "144x144"
+        }, {
+          "src": "app/images/icon-192.jpg",
+          "type": "image/jpg",
+          "sizes": "192x192"
+        },
+        {
+          "src": "app/images/icon-256.jpg",
+          "type": "image/jpg",
+          "sizes": "256x256"
+        },
+        {
+          "src": "app/images/icon-512.jpg",
+          "type": "image/jpg",
+          "sizes": "512x512"
+        }],
+
+  "display": "standalone",
+  "start_url": "/#!/example",
+  "scope": "/",
+  "orientation": "landscape",
+  "background_color": "#EE3268",
+  "theme_color": "#EE3268"
+}
