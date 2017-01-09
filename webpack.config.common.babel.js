@@ -3,6 +3,7 @@ import WebpackConfig from 'webpack-config';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 module.exports = new WebpackConfig().merge({
   output: {
@@ -46,6 +47,11 @@ module.exports = new WebpackConfig().merge({
       title: 'Starter Theme',
       template: 'index.ejs',
       inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {from: 'offline.html', to: 'offline.html'},
+      {from: 'service-worker.js', to: 'service-worker.js'},
+      {from: 'manifest.json', to: 'manifest.json'}
+    ])
   ]
 })
