@@ -2,7 +2,7 @@
 npm install
 
 # start the server
-npm start
+npm develop
 
 ```
 
