@@ -30,6 +30,7 @@ module.exports = new WebpackConfig().merge({
         loader: 'json-loader'
     }, {
         test: /\.html$/,
+        exclude: /index\.html/,
         loader: 'ng-cache?prefix=[dir]/[dir]'
     }, {
         test: /\.js$/,
@@ -44,8 +45,8 @@ module.exports = new WebpackConfig().merge({
       dry: false
     }),
     new HtmlWebpackPlugin({
-      title: 'Starter Theme',
-      template: 'index.ejs',
+      title: 'HeatSquare',
+      template: 'index.html',
       inject: 'body'
     }),
     new CopyWebpackPlugin([

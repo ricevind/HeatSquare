@@ -1,6 +1,6 @@
 {
-  "name": "Angular ES6 and Webpack Starter",
-  "short_name": "ng Start Kit",
+  "name": "HeatSquare",
+  "short_name": "HS",
   "icons": [{
           "src": "app/images/icon-128.png",
           "type": "image/png",
@@ -30,9 +30,9 @@
         }],
 
   "display": "standalone",
-  "start_url": "/#!/example",
+  "start_url": "/#!/login",
   "scope": "/",
-  "orientation": "landscape",
+  "orientation": "portrait",
   "background_color": "#EE3268",
   "theme_color": "#EE3268"
 }

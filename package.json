@@ -1,20 +1,18 @@
 {
-  "name": "angular-es6-webpack-starter",
-  "description": "An Angular 1 Starter kit featuring Angular 1, ES6, Webpack, UI-Router, SCSS, HMR, Protractor and multi environments.",
-  "version": "0.1.4",
+  "name": "heatsquare",
+  "description": "Torii App: HeatSquare for final group project",
+  "version": "0.0.1",
   "keywords": [
     "angular",
     "webpack",
-    "es6",
-    "starter",
-    "generator"
+    "es6"
   ],
   "engines": {
     "node": "6.3.1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/KarlDoyle/angular-es6-webpack-starter.git"
+    "url": "https://github.com/ricevind/HeatSquare.git"
   },
   "dependencies": {
     "angular": "^1.5.3",
