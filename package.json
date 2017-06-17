@@ -56,7 +56,7 @@
     "test-server": "http-server dist -p 9000 -a localhost",
     "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 9000 --inline --hot",
     "build": "webpack --config webpack.config.prod.babel.js --progress",
-    "postinstall": "cd client && npm install",
+    "postinstall": "npm install",
     "heroku-prebuild": "npm install -g express http-auth",
     "heroku-postbuild": "npm run build"
   }
