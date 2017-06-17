@@ -1,9 +1,9 @@
 
 
-import webpack from 'webpack';
-import path from 'path';
-import WebpackConfig from 'webpack-config';
-import ngAnnotatePlugin from 'ng-annotate-webpack-plugin';
+const webpack = require('webpack');
+const path = require('path');
+const WebpackConfig = require('WebpackConfig');
+const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = new WebpackConfig().extend('./webpack.config.common.babel.js').merge({
   entry : path.join(__dirname,'/app/app.module.js'),
