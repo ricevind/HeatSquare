@@ -1,1 +1,2 @@
-<h1>{{$ctrl.title}}</h1>
+<a ng-if="!$ctrl.isLogged" href="{{$ctrl.authUri}}">Log In</a>
+<button ng-if="$ctrl.isLogged" ng-click="$ctrl.logOut()">Log out</button>
