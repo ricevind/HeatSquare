@@ -1,8 +1,9 @@
 import loginHtml from './login.html';
 
 class LoginController {
-  constructor($log, loginService) {
+  constructor($log, $state, loginService) {
     this.loginService = loginService;
+    this.$state = $state;
     this.$log = $log;
 
     this.authUri;
@@ -10,8 +11,7 @@ class LoginController {
   }
 
   $onInit() {
-    this.$log.log(this.loginService.extractToken());
-    if (!this.loginService.extractToken() && !this.loginService.extractToken()) {
+    if (!this.loginService.extractToken() && !this.loginService.getToken()) {
       this.authUri = this.loginService.getLoginUrl();
       this.isLogged = false;
     } else if (this.loginService.getToken()) {
@@ -19,8 +19,8 @@ class LoginController {
     } else {
       const accesToken = this.loginService.extractToken();
       this.loginService.setToken(accesToken);
+      this.$state.go('userDashboard')
       this.isLogged = true;
-      this.$log.log(accesToken);
     }
   }
 

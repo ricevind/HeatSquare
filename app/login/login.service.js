@@ -20,6 +20,7 @@ export class LoginService {
 
   extractToken() {
     const access_token = this.$location.hash().split('=')[1];
+
     return access_token ? access_token : false;
   }
 
