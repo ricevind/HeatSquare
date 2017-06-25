@@ -8,7 +8,8 @@ export class UserDashboardComponent {
 
   $onInit() {
     this.$log.log('init')
-    this.$log.log(this.apiService._request('ola'));
+    this.$log.log(this.apiService.fetchActingUserData());
+    this.$log.log(this.apiService.fetchActingUserCheckIns());
   }
 }
 
