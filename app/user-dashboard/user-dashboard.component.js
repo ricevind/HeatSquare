@@ -1,6 +1,6 @@
 import userDashboardHtml from './user-dashboard.html';
 
-export class UserDashboardComponent {
+class UserDashboardComponent {
   constructor($log, apiService) {
     this.apiService = apiService;
     this.$log = $log;
