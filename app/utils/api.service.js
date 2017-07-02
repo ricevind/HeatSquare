@@ -1,7 +1,7 @@
-import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME} from '../api-key';
+import { CLIENT_ID, CLIENT_SECRET, TOKEN_NAME, API_URL} from '../app.config';
 
 export class ApiService {
-  constructor($log, $state, $http, $location) {
+  constructor($log, $state, $http) {
     this.$log = $log;
     this.$http = $http;
     this._getToken();
@@ -25,12 +25,12 @@ export class ApiService {
   }
 
   fetchUserData(userId) {
-    const apiUrl = `https://api.foursquare.com/v2/users/${userId}`;
+    const apiUrl = `${API_URL}/users/${userId}`;
     return this._request(apiUrl);
   }
 
   fetchUserCheckIns(userId) {
-    const apiUrl = `https://api.foursquare.com/v2/users/${userId}/checkins`;
+    const apiUrl = `${API_URL}/users/${userId}/checkins`;
     return this._request(apiUrl);
   }
 

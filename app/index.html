@@ -2,7 +2,7 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>HeatSquare</title>
     <meta name="description" content="">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -15,6 +15,7 @@
     Ponizej je apka
     <div id="app-wrapper" ui-view></div>
   </body>
+  <script src="https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places"></script>
   <script type="text/javascript">
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {

@@ -1,0 +1,10 @@
+<h2>Map component</h2>
+<div map-lazy-load="{{$ctrl.googleMapsUrl}}">
+  <ng-map zoom="12"
+          center="37.774546, -122.433523"
+          map-type-id="SATELLITE">
+             <heatmap-layer ng-if="$ctrl.heatDataResolved" id="foo" data="heatDataResolved"></heatmap-layer>
+  </ng-map>
+</div>
+{{$ctrl.isGoogle}}
+<button ng-click="$ctrl.heatData()">heat</button>

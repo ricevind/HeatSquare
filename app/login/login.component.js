@@ -11,16 +11,16 @@ class LoginController {
   }
 
   $onInit() {
-    if (!this.loginService.extractToken() && !this.loginService.getToken()) {
-      this.authUri = this.loginService.getLoginUrl();
-      this.isLogged = false;
+    this.checkLoginState();
+  }
+
+  checkLoginState() {
+    if (!this._hasToken()) {
+      this._prepareLoginUrl();
     } else if (this.loginService.getToken()) {
       this.isLogged = true;
     } else {
-      const accesToken = this.loginService.extractToken();
-      this.loginService.setToken(accesToken);
-      this.$state.go('userDashboard')
-      this.isLogged = true;
+      this._logIn();
     }
   }
 
@@ -29,6 +29,23 @@ class LoginController {
     this.isLogged = false;
     this.authUri = this.loginService.getLoginUrl();
   }
+
+  _hasToken() {
+    return this.loginService.extractToken() || this.loginService.getToken();
+  }
+
+  _prepareLoginUrl() {
+    this.authUri = this.loginService.getLoginUrl();
+    this.isLogged = false;
+  }
+
+  _logIn() {
+    const accesToken = this.loginService.extractToken();
+    this.loginService.setToken(accesToken);
+    this.$state.go('userDashboard');
+    this.isLogged = true;
+  }
+
 }
 
 angular
