@@ -15,12 +15,9 @@ class HeatMapComponent {
 
   $onInit() {
     this.map = this.NgMap.getMap().then((e)=>{
-    this.$log.log('fuck')
-
       this.$window.heatDataResolved = this.HeatMapService.getMockPoints();
       this.heatDataResolved = this.HeatMapService.getMockPoints();
-
-      console.log('e', e)})
+    });
   }
 
   heatData() {
