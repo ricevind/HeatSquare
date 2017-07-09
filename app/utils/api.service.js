@@ -24,6 +24,10 @@ export class ApiService {
     return this.fetchUserCheckIns('self');
   }
 
+  fetchActingUserFriends() {
+    return this.fetchUserFriends('self');
+  }
+
   fetchUserData(userId) {
     const apiUrl = `${API_URL}/users/${userId}`;
     return this._request(apiUrl);
@@ -31,6 +35,16 @@ export class ApiService {
 
   fetchUserCheckIns(userId) {
     const apiUrl = `${API_URL}/users/${userId}/checkins`;
+    return this._request(apiUrl);
+  }
+
+  fetchUserFriends(userId) {
+    const apiUrl = `${API_URL}/users/${userId}/friends`;
+    return this._request(apiUrl);
+  }
+
+  fetchFriendCheckIns(friendId) {
+    const apiUrl = `${API_URL}/users/${friendId}/friends`;
     return this._request(apiUrl);
   }
 
