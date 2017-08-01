@@ -26,10 +26,6 @@ class HeatMapComponent {
       this.heatDataResolved = this.HeatMapService.getMockPoints();
     }
   }
-
-
-
-
 }
 
 angular
