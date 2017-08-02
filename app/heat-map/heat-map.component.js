@@ -11,7 +11,6 @@ class HeatMapComponent {
   }
 
   parseLayerPoints(points) {
-    console.log(points)
     if (points) {
       return points.map((point) => new google.maps.LatLng(...point));
     } else {

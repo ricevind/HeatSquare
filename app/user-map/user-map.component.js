@@ -8,7 +8,8 @@ class UserMapComponent {
 
   $onInit() {
     this.layerData = this.heatMapService.getMockPoints();
-    console.log('kayer', this.layerData)
+    this.mid = this.heatMapService.calcMidPoint(this.layerData);
+    console.log(this.mid)
   }
 }
 

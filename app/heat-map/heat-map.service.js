@@ -4,7 +4,24 @@ export class HeatMapService {
     this.$log = $log;
     this.$window = $window
   }
-// new this.$window.google.maps.LatLng(
+
+  calcMidPoint(points) {
+    const xPoint = this._average(points, 'x');
+    const yPoint = this._average(points, 'y');
+
+    return [xPoint, yPoint];
+  }
+
+  _average(points, coordinate) {
+    const coor = coordinate === 'x' ? 0 : 1;
+    const pointsNumber = points.length;
+    const averagePoint = points.reduce(( prevValue, point) => {
+      return point[coor] + prevValue;
+    }, 0) / pointsNumber;
+
+    return averagePoint;
+  }
+
   getMockPoints() {
     return [
       [37.782551, -122.445368],
