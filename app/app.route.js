@@ -7,6 +7,10 @@ function loginRoutes($stateProvider, $urlRouterProvider) {
       url: '/user',
       component: 'userDashboard'
     })
+    .state('userMap', {
+      url: '/userMap',
+      component: 'userMap'
+    })
 }
 
 export default loginRoutes;

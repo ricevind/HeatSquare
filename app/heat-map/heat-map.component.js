@@ -2,35 +2,80 @@ import HeatMapHtml from './heat-map.html';
 import { GOOGLE_MAPS } from '../app.config';
 
 class HeatMapComponent {
-  constructor($log, $window, NgMap, HeatMapService) {
+  constructor($log, $window, $document,  HeatMapService) {
     this.$log = $log;
-    this.$log.log(NgMap);
-    this.NgMap = NgMap;
-    this.googleMapsUrl = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS}`
-    this.heatDataResolved;
-    this.isGoogle = false;
-    this.$window = $window;
+    this.$document = $document;
+    // this.googleMapsUrl = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS}`;
+    this.googleMapsLayersUrl = `https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places?key=${GOOGLE_MAPS}`;
+    this.mapsLoaded = false;
     this.HeatMapService = HeatMapService;
   }
 
   $onInit() {
-    this.map = this.NgMap.getMap().then((e)=>{
-      this.$window.heatDataResolved = this.HeatMapService.getMockPoints();
-      this.heatDataResolved = this.HeatMapService.getMockPoints();
+    this.loadScripts();
+   
+  }
+
+  loadScripts() {
+    this.googleMapScript().then(() => {
+      this.initMap();
+      this.initLayer();
     });
   }
 
-  heatData() {
-    if (this.$window.google) {
-      this.isGoogle = true;
-      this.heatDataResolved = this.HeatMapService.getMockPoints();
-    }
+  initMap() {
+    this.map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: {lat: +this.mapLat, lng: +this.mapLng},
+      mapTypeId: 'satellite'
+    });
   }
+
+  initLayer() {
+    this.heatmap = new google.maps.visualization.HeatmapLayer({
+      data: this.HeatMapService.getMockPoints(),
+      map: this.map
+    });
+  }
+
+  googleMapScript() {
+    const maps = document.createElement('script');
+    maps.type = 'text/javascript';
+    maps.async = true;
+    maps.src = this.googleMapsLayersUrl;
+    
+    return new Promise((resolve, reject) => {
+      maps.onload = maps.onreadystatechange = () => { 
+        resolve();
+      };
+      angular.element(document.getElementsByTagName('body')[0].append(maps));
+    });
+  }
+
+  // googleMapsLayersScript() {
+  //   const layers = document.createElement('script');
+  //   layers.type = 'text/javascript';
+  //   layers.async = true;
+  //   layers.src = this.googleMapsLayersUrl;
+
+  //   return new Promise((resolve, reject) => {
+  //     layers.onload = layers.onreadystatechange = () => { 
+  //       resolve();
+  //     };
+  //     angular.element(document.getElementsByTagName('body')[0].append(layers));
+  //   });
+  // }
+
 }
 
 angular
   .module('app')
   .component('heatMap', {
     controller: HeatMapComponent,
-    template: HeatMapHtml
+    template: HeatMapHtml,
+    bindings: {
+      mapLat: '<',
+      mapLng: '<',
+      layerData: '<'
+    }
   });

@@ -11,12 +11,11 @@ require('./main.scss');
 
 angular.module('app', [
   uirouter,
-  'ngMap',
   'utilsModule',
   'loginModule',
   'userDashboardModule'
 ]).service('HeatMapService', HeatMapService)
   .config(routing);
 
+require('./user-map/user-map.component');
 require('./heat-map/heat-map.component');
-

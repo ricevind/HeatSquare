@@ -50,9 +50,9 @@ module.exports = new WebpackConfig().merge({
       inject: 'body'
     }),
     new CopyWebpackPlugin([
-      {from: 'offline.html', to: 'offline.html'},
-      {from: 'service-worker.js', to: 'service-worker.js'},
-      {from: 'manifest.json', to: 'manifest.json'}
+      // {from: 'offline.html', to: 'offline.html'},
+      // {from: 'service-worker.js', to: 'service-worker.js'},
+      // {from: 'manifest.json', to: 'manifest.json'}
     ])
   ]
 })
