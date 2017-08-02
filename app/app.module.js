@@ -14,7 +14,7 @@ angular.module('app', [
   'utilsModule',
   'loginModule',
   'userDashboardModule'
-]).service('HeatMapService', HeatMapService)
+]).service('heatMapService', HeatMapService)
   .config(routing);
 
 require('./user-map/user-map.component');

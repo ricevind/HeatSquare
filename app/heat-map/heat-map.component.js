@@ -2,18 +2,21 @@ import HeatMapHtml from './heat-map.html';
 import { GOOGLE_MAPS } from '../app.config';
 
 class HeatMapComponent {
-  constructor($log, $window, $document,  HeatMapService) {
-    this.$log = $log;
-    this.$document = $document;
-    // this.googleMapsUrl = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS}`;
+  constructor() {
     this.googleMapsLayersUrl = `https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places?key=${GOOGLE_MAPS}`;
-    this.mapsLoaded = false;
-    this.HeatMapService = HeatMapService;
   }
 
   $onInit() {
     this.loadScripts();
-   
+  }
+
+  parseLayerPoints(points) {
+    console.log(points)
+    if (points) {
+      return points.map((point) => new google.maps.LatLng(...point));
+    } else {
+      return [];
+    }
   }
 
   loadScripts() {
@@ -33,7 +36,7 @@ class HeatMapComponent {
 
   initLayer() {
     this.heatmap = new google.maps.visualization.HeatmapLayer({
-      data: this.HeatMapService.getMockPoints(),
+      data:  this.parseLayerPoints(this.layerData),
       map: this.map
     });
   }
