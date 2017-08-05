@@ -1,7 +1,16 @@
 <div class="flex-wrapper controlls">
+    <div class="controlls-button ">
+        <button type="button" ng-click="$ctrl.goToDashboard()">Back To Dashboard</button>
+    </div>
+
+    <div class="controlls-button">
+        <button type="button" ng-click="$ctrl.centerMap()">Center on user data</button>
+    </div>
+    
     <div class="controlls-button controlls-button_active">
         <button type="button" ng-click="$ctrl.setUserData()">User data</button>
     </div>
+
     
     <div class="controlls-button">
         <button type="button" ng-click="$ctrl.setCompareData()">Data to compare</button>

@@ -1,9 +1,10 @@
 import UserMapHtml from './user-map.html';
 
 class UserMapComponent {
-  constructor(heatMapService) {
+  constructor($state, heatMapService) {
     this.heatMapService = heatMapService;
     this.layerData = [];
+    this.$state = $state;
   }
 
   $onInit() {
@@ -13,6 +14,15 @@ class UserMapComponent {
     this.mid = this.heatMapService.calcMidPoint(this.layerData);
     this.layerDataAdded = this.heatMapService.addLayers(this.layerData, this.addPoints, 0.001)
     this.layerDataSubed = this.heatMapService.subLayers(this.layerData, this.addPoints, 0.001)
+  }
+
+  centerMap() {
+    const hm = angular.element(document.querySelector('heat-map')).controller('heatMap');
+    hm.centerMap();
+  }
+
+  goToDashboard() {
+    this.$state.go('userDashboard');
   }
 
   setUserData() {

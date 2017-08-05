@@ -1,10 +1,9 @@
 import loginHtml from './login.html';
 
 class LoginController {
-  constructor($log, $state, loginService) {
+  constructor($state, loginService) {
     this.loginService = loginService;
     this.$state = $state;
-    this.$log = $log;
 
     this.authUri;
     this.isLogged = false;

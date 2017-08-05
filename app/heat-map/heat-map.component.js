@@ -16,9 +16,13 @@ class HeatMapComponent {
   $onChanges(change) {
     const {layerData} = change;
     if (layerData) {
-      console.log(layerData)
       this.heatmap.set('data' , this.parseLayerPoints(layerData.currentValue));
     }
+  }
+
+  centerMap() {
+    this.map.setZoom(13);
+    this.map.panTo({lat: +this.mapLat, lng: +this.mapLng}); 
   }
 
   parseLayerPoints(points) {

@@ -1,16 +1,20 @@
 import userDashboardHtml from './user-dashboard.html';
 
 class UserDashboardComponent {
-  constructor($log, apiService) {
+  constructor($log, $state, apiService) {
     this.apiService = apiService;
     this.$log = $log;
+    this.$state = $state;
   }
 
   $onInit() {
-    this.$log.log('init')
     this.$log.log(this.apiService.fetchActingUserData());
     this.$log.log(this.apiService.fetchActingUserCheckIns());
     this.$log.log(this.apiService.fetchActingUserFriends());
+  }
+
+  goToUserMap() {
+    this.$state.go('userMap');
   }
 }
 
