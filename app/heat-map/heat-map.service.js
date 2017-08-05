@@ -12,6 +12,26 @@ export class HeatMapService {
     return [xPoint, yPoint];
   }
 
+  addLayers(basePoints, addPoints, R = 0.0001) {
+    const basePointsWeighted = basePoints.map((point) => {
+      const pointMeta = this._pointsInRadious(point, addPoints, R);
+      const weight = pointMeta.reduce((prev, curr) => (prev + (1 - curr[1]))*1, 1);
+      const wpoint = [...point, weight];
+      return wpoint;
+    });
+    return basePointsWeighted;
+  }
+
+  subLayers(basePoints, addPoints, R = 0.0001) {
+     const basePointsWeighted = basePoints.map((point) => {
+      const pointMeta = this._pointsInRadious(point, addPoints, R);
+      const weight = pointMeta.reduce((prev, curr) => (prev - (1 - curr[1]))*1, 1);
+      const wpoint = [...point, weight];
+      return wpoint;
+    });
+    return basePointsWeighted;
+  }
+
   _average(points, coordinate) {
     const coor = coordinate === 'x' ? 0 : 1;
     const pointsNumber = points.length;
@@ -20,6 +40,26 @@ export class HeatMapService {
     }, 0) / pointsNumber;
 
     return averagePoint;
+  }
+
+  _pointsInRadious(basePoint, points, R) {
+    // r = 0.001 is roughfly 70m at polands longnitude
+    const pointsInR = [];
+    for (let i = 0; i < points.length; i++) {
+      const r2 = Math.pow(points[i][0] - basePoint[0], 2) + Math.pow(points[i][1] - basePoint[1], 2);
+      const r = Math.sqrt(r2);
+      const distance = r/R;
+      const isInCircle = r2 < Math.pow(R, 2);
+      if (isInCircle) {
+        pointsInR.push([i, distance]);
+      }
+    }
+
+    return pointsInR;
+  }
+
+  getMockPointsOdd() {
+    return this.getMockPoints().filter((v, i) => i > 50 && i < 200);
   }
 
   getMockPoints() {
