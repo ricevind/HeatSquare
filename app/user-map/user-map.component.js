@@ -3,14 +3,32 @@ import UserMapHtml from './user-map.html';
 class UserMapComponent {
   constructor(heatMapService) {
     this.heatMapService = heatMapService;
+    this.layerData = [];
   }
 
   $onInit() {
-    this.layerData = this.heatMapService.getMockPoints();
+    this.userData = this.heatMapService.getMockPoints();
+    this.layerData = this.userData;
     this.addPoints = this.heatMapService.getMockPointsOdd();
     this.mid = this.heatMapService.calcMidPoint(this.layerData);
     this.layerDataAdded = this.heatMapService.addLayers(this.layerData, this.addPoints, 0.001)
-    console.log('shit', this.layerDataAdded)
+    this.layerDataSubed = this.heatMapService.subLayers(this.layerData, this.addPoints, 0.001)
+  }
+
+  setUserData() {
+    this.layerData = this.userData;
+  }
+
+  setCompareData() {
+    this.layerData = this.addPoints;
+  }
+
+  setAddData() {
+    this.layerData =  this.layerDataAdded;
+  }
+
+  setSubData() {
+    this.layerData =  this.layerDataSubed;
   }
 }
 

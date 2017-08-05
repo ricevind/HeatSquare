@@ -1,3 +1,5 @@
-body {
-  background-color: darker(red, 10%);
+.flex-wrapper {
+  display: flex;
 }
+
+@import './styles/_user-map';

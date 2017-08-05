@@ -13,12 +13,20 @@ class HeatMapComponent {
     })
   }
 
+  $onChanges(change) {
+    const {layerData} = change;
+    if (layerData) {
+      console.log(layerData)
+      this.heatmap.set('data' , this.parseLayerPoints(layerData.currentValue));
+    }
+  }
+
   parseLayerPoints(points) {
     if (points) {
       return points.map((point, i) => {
-       const p =  { location: new google.maps.LatLng(point[0], point[1]), weight: point[2] ? point[2] : 0};
+       const p =  { location: new google.maps.LatLng(point[0], point[1]), weight: point[2] ? point[2] : 1};
        return p;
-      });
+      }).filter((p) => p.weight > 0);
     } else {
       return [];
     }
@@ -39,7 +47,7 @@ class HeatMapComponent {
     this.heatmap = new google.maps.visualization.HeatmapLayer({
       data:  this.parseLayerPoints(this.layerData),
       dissipating: false,
-      maxIntensity: 8,
+      maxIntensity: 5,
       radius: 0.00225,
       map: this.map
     });

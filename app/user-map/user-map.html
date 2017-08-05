@@ -1,20 +1,21 @@
-<h1>Base</h1>
+<div class="flex-wrapper controlls">
+    <div class="controlls-button controlls-button_active">
+        <button type="button" ng-click="$ctrl.setUserData()">User data</button>
+    </div>
+    
+    <div class="controlls-button">
+        <button type="button" ng-click="$ctrl.setCompareData()">Data to compare</button>
+    </div>
+    
+    <div class="controlls-button ">
+        <button type="button" ng-click="$ctrl.setAddData()">Add</button>
+    </div>
+
+    <div class="controlls-button ">
+        <button type="button" ng-click="$ctrl.setSubData()">Subb</button>
+    </div>
+</div>
 <heat-map map-lat="$ctrl.mid[0]" 
           map-lng="$ctrl.mid[1]" 
           layer-data="$ctrl.layerData">
 </heat-map>
-
-<h1>To Add</h1>
-
-<heat-map map-lat="$ctrl.mid[0]" 
-          map-lng="$ctrl.mid[1]" 
-          layer-data="$ctrl.addPoints">
-</heat-map>
-
-<h1>Added</h1>
-
-<heat-map map-lat="$ctrl.mid[0]" 
-          map-lng="$ctrl.mid[1]" 
-          layer-data="$ctrl.layerDataAdded">
-</heat-map>
-        
