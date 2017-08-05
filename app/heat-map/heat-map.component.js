@@ -6,7 +6,6 @@ class HeatMapComponent {
     this.mapId = 'map' + Math.random();
    }
 
-
   $postLink() {
     setTimeout(() => {
     this.initMap();
@@ -29,7 +28,10 @@ class HeatMapComponent {
     this.map = new google.maps.Map(document.getElementById(this.mapId), {
       zoom: 13,
       center: {lat: +this.mapLat, lng: +this.mapLng},
-      mapTypeId: 'satellite'
+      mapTypeId: 'roadmap'
+    });
+     this.map.addListener('zoom_changed', ()=>{
+      this._onZoom(this.map.getZoom());
     });
   }
 
@@ -37,10 +39,47 @@ class HeatMapComponent {
     this.heatmap = new google.maps.visualization.HeatmapLayer({
       data:  this.parseLayerPoints(this.layerData),
       dissipating: false,
-      maxIntensity: 10,
-      radius: 0.0015,
+      maxIntensity: 8,
+      radius: 0.00225,
       map: this.map
     });
+  }
+
+  _onZoom(zoomLevel) {
+    switch(zoomLevel){
+      case 7:
+          this.heatmap.set('radius', 0.04);
+          break;
+      case 8:
+          this.heatmap.set('radius', 0.03);
+          break;
+      case 9:
+          this.heatmap.set('radius', 0.02);
+          break;
+      case 10:
+          this.heatmap.set('radius', 0.01);
+          break;
+      case 11:
+          this.heatmap.set('radius', 0.005);
+          break;
+      case 12:
+          this.heatmap.set('radius', 0.0025);
+          break;
+      case 13:
+          this.heatmap.set('radius', 0.00225);
+          break;
+      case 14:
+          this.heatmap.set('radius', 0.00125);
+          break;
+      case 15:
+          this.heatmap.set('radius', 0.00085);
+          break;
+      case 16:
+          this.heatmap.set('radius', 0.00055);
+          break;
+      default:
+          this.heatmap.set('radius', zoomLevel < 7 ? 0.1 : 0.000625);
+    }
   }
 }
 

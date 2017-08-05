@@ -9,7 +9,7 @@ class UserMapComponent {
     this.layerData = this.heatMapService.getMockPoints();
     this.addPoints = this.heatMapService.getMockPointsOdd();
     this.mid = this.heatMapService.calcMidPoint(this.layerData);
-    this.layerDataAdded = this.heatMapService.subLayers(this.layerData, this.addPoints, 0.001)
+    this.layerDataAdded = this.heatMapService.addLayers(this.layerData, this.addPoints, 0.001)
     console.log('shit', this.layerDataAdded)
   }
 }
