@@ -10,7 +10,6 @@ class UserDashboardComponent {
   $onInit() {
     this.$log.log(this.apiService.fetchActingUserData());
     this.$log.log(this.apiService.fetchActingUserCheckIns());
-    this.$log.log(this.apiService.fetchActingUserFriends());
   }
 
   goToUserMap() {
