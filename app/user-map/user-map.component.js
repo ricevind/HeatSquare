@@ -2,9 +2,9 @@ import UserMapHtml from './user-map.html';
 
 class UserMapComponent {
   constructor($state, heatMapService) {
+    this.$state = $state;
     this.heatMapService = heatMapService;
     this.layerData = [];
-    this.$state = $state;
   }
 
   $onInit() {

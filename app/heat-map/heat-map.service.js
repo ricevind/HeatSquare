@@ -15,7 +15,7 @@ export class HeatMapService {
   addLayers(basePoints, addPoints, R = 0.0001) {
     const basePointsWeighted = basePoints.map((point) => {
       const pointMeta = this._pointsInRadious(point, addPoints, R);
-      const weight = pointMeta.reduce((prev, curr) => (prev + (1 - curr[1]))*1, 1);
+      const weight = pointMeta.reduce((prev, curr) => (prev + (1 - curr[1])) * 1, 1);
       const wpoint = [...point, weight];
       return wpoint;
     });
@@ -23,9 +23,9 @@ export class HeatMapService {
   }
 
   subLayers(basePoints, addPoints, R = 0.0001) {
-     const basePointsWeighted = basePoints.map((point) => {
+    const basePointsWeighted = basePoints.map((point) => {
       const pointMeta = this._pointsInRadious(point, addPoints, R);
-      const weight = pointMeta.reduce((prev, curr) => (prev - (1 - curr[1]))*1, 1);
+      const weight = pointMeta.reduce((prev, curr) => (prev - (1 - curr[1])) * 1, 1);
       const wpoint = [...point, weight];
       return wpoint;
     });
@@ -35,7 +35,7 @@ export class HeatMapService {
   _average(points, coordinate) {
     const coor = coordinate === 'x' ? 0 : 1;
     const pointsNumber = points.length;
-    const averagePoint = points.reduce(( prevValue, point) => {
+    const averagePoint = points.reduce((prevValue, point) => {
       return point[coor] + prevValue;
     }, 0) / pointsNumber;
 
@@ -48,7 +48,7 @@ export class HeatMapService {
     for (let i = 0; i < points.length; i++) {
       const r2 = Math.pow(points[i][0] - basePoint[0], 2) + Math.pow(points[i][1] - basePoint[1], 2);
       const r = Math.sqrt(r2);
-      const distance = r/R;
+      const distance = r / R;
       const isInCircle = r2 < Math.pow(R, 2);
       if (isInCircle) {
         pointsInR.push([i, distance]);

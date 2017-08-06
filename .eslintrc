@@ -42,16 +42,16 @@
     "angular/no-service-method": 0,
     "angular/rest-service": [2,"Restangular"],
     "angular/watchers-execution": [2,"$apply"],
-    "angular/angularelement": 2,
-    "angular/window-service": 2,
-    "angular/timeout-service": 2,
+    "angular/angularelement": 0,
+    "angular/window-service": 0,
+    "angular/timeout-service": 0,
     "angular/no-jquery-angularelement": 2,
-    "angular/log": 2,
+    "angular/log": 0,
     "angular/json-functions": 2,
-    "angular/interval-service": 2,
+    "angular/interval-service": 0,
     "angular/foreach": 2,
-    "angular/document-service": 2,
-    "angular/definedundefined": 2,
+    "angular/document-service": 0,
+    "angular/definedundefined": 0,
     "no-bitwise": 2,
     "camelcase": [
       1,
@@ -85,7 +85,7 @@
       2,
       "single"
     ],
-    "no-undef": 2,
+    "no-undef": 1,
     "no-unused-vars": 0,
     "strict": 0,
     "max-params": [
@@ -102,7 +102,7 @@
     ],
     "complexity": [
       2,
-      8
+      12
     ],
     "max-len": [
       1,
